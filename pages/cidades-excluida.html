@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link rel="stylesheet" href="4rodassobre.css.css">
+   
+    <title>Cidades</title>
+
+    <style>
+      .image {
+          display: none;
+          width: 50%;
+          height: auto;
+          max-width: 900px; 
+          height: auto; 
+          text-align: center;
+          display: flex;
+          margin-top: 80px;
+      }
+  </style>
+</head>
+<body>
+  
+    <div class="container">
+      <a href="home.html">
+      <img src="imagensp/4Rcortado.gif.gif" alt="Logo" class="logo"  > 
+      </a>
+        <nav class="menu">
+          <div class="menu-item">
+            <a href="home.html">Home</a>
+          </div>
+          <div class="menu-item">
+            <a href="">Produtos</a>
+            <div class="submenu">
+              <a href="">Adesivos<br></a>
+              <a href="">Anel de Encosto<br> </a>
+              <a href="">Arruela<br> </a>
+              <a href="">Bico Injetor<br> </a>
+              <a href="">Cabeçote<br></a>
+            </div>
+          </div>
+          <div class="menu-item">
+            <a href="Sobre.html">Sobre</a>
+          </div>
+          <div class="menu-item">
+            <a href="contato1.html"target="_blank">Contato</a>
+          </div>
+          <div class="menu-item">
+            <a href="loginteste.html" target="_blank">Login</a>
+          </div>
+        </nav>
+        <div class="search-bar">
+          <input type="text" id="searchInput" onkeyup="handleKeyPress(event)" placeholder="Digite sua pesquisa">
+          <button onclick="pesquisar()">Pesquisar</button>
+      </div>
+      </div>
+      
+     
+     
+    
+     
+
+      
+      <form class="formulariocidades">
+        <label for="cidade">Escolha uma cidade:</label>
+        <select id="cidade" onchange="mostrarImagem()">
+            <option value="">Selecione...</option>
+            <option value="catanduva">Catanduva</option>
+            <option value="elisiario">Elisiário</option>
+            <option value="rioPreto">São José do Rio Preto</option>
+          
+        </select>
+         <center>
+        <img id="imagemCatanduva" class="image" src="imagensp/lojacatanduva.jpg" alt="Catanduva" style="display: none;">
+        <img id="imagemElisiario" class="image" src="imagensp/lojaelisiário.jpg" alt="Elisiário"style="display: none;">
+        <img id="imagemRioPreto" class="image" src="imagensp/lojariopreto.jpg" alt="São José do Rio Preto"style="display: none;">
+        </center>
+    </form>
+    
+      
+             
+             
+              <footer class="footer">
+                <nav class="nav1">
+                  <img src="imagensp/Principaismarcas.gif.gif"width="1300px" height="150px">
+                </nav>
+                  <div class="waves">
+                  <div class="wave" id="wave1"></div>
+                  <div class="wave" id="wave2"></div>
+                  <div class="wave" id="wave3"></div>
+                  <div class="wave" id="wave4"></div>
+                
+                <ul class="social-icon">
+                  <li class="social-icon__item"><a class="social-icon__link" href="https://www.facebook.com" target="_blank">
+                      <ion-icon name="logo-facebook"></ion-icon>
+                    </a></li>
+                  <li class="social-icon__item"><a class="social-icon__link" href="https://twitter.com" target="_blank">
+                      <ion-icon name="logo-twitter"></ion-icon>
+                    </a></li>
+                  <li class="social-icon__item"><a class="social-icon__link" href="https://www.linkedin.com/signup?_l=pt&trk=guest_homepage-basic_nav-header-join" target="_blank">
+                      <ion-icon name="logo-linkedin"></ion-icon>
+                    </a></li>
+                  <li class="social-icon__item"><a class="social-icon__link" href="https://www.instagram.com" target="_blank">
+                      <ion-icon name="logo-instagram"></ion-icon>
+                    </a></li>
+                </ul>
+                <center>
+                <ul class="menu-footer">
+                  <li class="menu__item"><a class="menu__link" href="cidades.html">Cidades</a></li>
+                  <li class="menu__item"><a class="menu__link" href="marcas.html">Marcas</a></li>
+                  <li class="menu__item"><a class="menu__link" href="https://quatrorodas.abril.com.br/noticias/" target="_blank">Noticias</a></li>
+                  <li class="menu__item"><a class="menu__link" href="trabalheconos.html" target="_blank">Trabalhe conosco</a></li>
+          
+                </ul>
+                <center>
+                  <p>&copy;2023 Paulo Sanches | Direitos Reservados</p>
+                </center>
+                
+              </footer>
+              <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+              <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+              
+              
+              <script>
+
+
+                function mostrarImagem() {
+                    var cidade = document.getElementById("cidade").value;
+                    var imagens = document.getElementsByClassName("image");
+          
+                    for (var i = 0; i < imagens.length; i++) {
+                        imagens[i].style.display = "none"; 
+                    }
+          
+                    if (cidade !== "") {
+                        var imagemCidade = document.getElementById("imagem" + cidade.charAt(0).toUpperCase() + cidade.slice(1));
+                        imagemCidade.style.display = "block";
+                    }
+                }
+            </script>
+            
+             
+              <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                const zoomableImages = document.querySelectorAll('.zoomable');
+              
+                zoomableImages.forEach((image) => {
+                let isZoomed = false;
+              
+                image.addEventListener('click', () => {
+                if (isZoomed) {
+                image.style.transform = 'scale(1)';
+                isZoomed = false;
+                } else {
+                image.style.transform = 'scale(1.7)'; 
+                isZoomed = true;
+                        }
+                      });
+                    });
+                  });
+              </script>
+
+          
+<script>
+  
+  window.addEventListener('scroll', function() {
+    var footer = document.querySelector('footer');
+    var scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    var windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight || 0;
+    var documentHeight = Math.max(
+      document.body.scrollHeight || 0, 
+      document.documentElement.scrollHeight || 0,
+      document.body.offsetHeight || 0,
+      document.documentElement.offsetHeight || 0,
+      document.body.clientHeight || 0,
+      document.documentElement.clientHeight || 0
+    );
+
+    if (scrollPosition + windowHeight >= documentHeight) {
+      footer.style.display = 'block';
+    } else {
+      footer.style.display = 'none';
+    }
+  });
+</script>
+
+      </div>
+
+
+      <script>
+        function zoomIn() {
+          var mapImage = document.getElementById('mapImage');
+          mapImage.style.transform = 'scale(3)';
+        }
+      
+        function zoomOut() {
+          var mapImage = document.getElementById('mapImage');
+          mapImage.style.transform = 'scale(1)';
+        }
+      </script>
+      
+      <script>
+     function toggleZoom() {
+    var mapImage = document.getElementById('mapImage');
+  
+    if (mapImage.classList.contains('zoomed')) {
+    mapImage.classList.remove('zoomed');
+    } else {
+    mapImage.classList.add('zoomed');
+   }
+}
+
+      </script>
+
+<script>
+  function pesquisar() {
+      var input = document.getElementById('searchInput');
+      var searchTerm = input.value.toLowerCase();
+      var produtos = document.querySelectorAll('.product');
+
+      for (var i = 0; i < produtos.length; i++) {
+          var produto = produtos[i];
+          var titulo = produto.querySelector('h3').textContent.toLowerCase();
+
+          if (titulo.includes(searchTerm)) {
+              produto.style.display = 'block';
+          } else {
+              produto.style.display = 'none';
+            }
+  }
+}
+
+function handleKeyPress(event) {
+  if (event.keyCode === 13) {
+    pesquisar();
+  }
+}
+
+
+
+</script>
+</body>
+</html>

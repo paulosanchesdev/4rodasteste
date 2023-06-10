@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" type="image/png" href="imagensp/favroda.png.png">
+  <link rel="stylesheet" type="text/css" href="loginteste.css">
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login</h2>
+    <form>
+      <input type="text" placeholder="Usuário">
+      <input type="password" placeholder="Senha">
+      <button type="submit" onclick="fecharPagina()">Login</button>
+    </form>
+    <p class="register-link">Não tem uma conta? <a href="cadastro.html"target="_blank"><button>Cadastro</button></a></p>
+    <div class="social-login">
+      <button class="google-button" onclick="fecharPagina()">Login com o Google</button>
+      <button class="facebook-button" onclick="fecharPagina()">Login com o Facebook</button>
+    </div>
+  </div>
+
+  <script>
+    function fecharPagina() {
+      window.close();
+    }
+  </script>
+</body>
+</html>

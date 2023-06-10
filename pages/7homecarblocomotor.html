@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="imagensp/favroda.png.png">
+    <link rel="stylesheet" href="4rodasoficial.css.css">
+    <title>7homecarblocomotor</title>
+    <style>
+      .produto-frete {
+      background-color: #f2f2f2;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      max-width: 400px;
+      margin: 0 auto;
+      margin-left: 10px;
+      margin-top: 20px;
+      margin-bottom: 300px;
+      width: 50%;
+      background-image: url(https://i.pinimg.com/originals/6f/7c/63/6f7c63991726d61d63730682e791d78c.gif);
+      opacity: 0.9;
+      color:white;
+      max-height: 1200px;
+    }
+    
+  
+    .produto-frete h3 {
+      font-size: 18px;
+      margin-bottom: 5px;
+      text-align: center;
+    }
+  
+    .produto-frete p.price {
+      font-size: 25px;
+      margin-bottom: 10px;
+      color:white;
+      text-align: center;
+    }
+  
+    .produto-frete form label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+  
+    .produto-frete form input,
+    .produto-frete form select {
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+  
+    .produto-frete form button {
+      background-color: #4caf50;
+      color: white;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+  
+    .produto-frete #total {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  
+    .produto-frete #cartao-credito {
+      margin-top: 20px;
+    }
+  
+    .produto-frete #cartao-credito label,
+    .produto-frete #cartao-credito input {
+      display: block;
+      margin-bottom: 10px;
+    }
+  
+    .produto-frete #cartao-credito input[type="text"] {
+      width: 100%;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+  
+    .produto-frete a {
+      text-decoration: none;
+      
+    }
+    .parcela{
+      text-align: center;
+    }
+  
+    .produto-frete button {
+      background-color: #4caf50;
+      color: white;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    </style>
+    
+</head>
+<body>
+  
+    <div class="container">
+      <a href="home.html">
+      <img src="imagensp/4Rcortado.gif.gif" alt="Logo" class="logo"  > 
+      </a>
+        <nav class="menu">
+          <div class="menu-item">
+            <a href="home.html">Home</a>
+          </div>
+          <div class="menu-item">
+            <a href="">Produtos</a>
+            <div class="submenu">
+              <a href="">Adesivos<br></a>
+              <a href="">Anel de Encosto<br> </a>
+              <a href="">Arruela<br> </a>
+              <a href="">Bico Injetor<br> </a>
+              <a href="">Cabeçote<br></a>
+            </div>
+          </div>
+          <div class="menu-item">
+            <a href="Sobre.html"target="_blank">Sobre</a>
+          </div>
+          <div class="menu-item">
+            <a href="contato1.html"target="_blank">Contato</a>
+          </div>
+          <div class="menu-item">
+            <a href="loginteste.html" target="_blank">Login</a>
+          </div>
+        </nav>
+        <div class="search-bar">
+          <input type="text" id="searchInput" onkeyup="handleKeyPress(event)" placeholder="Digite sua pesquisa">
+          <button onclick="pesquisar()">Pesquisar</button>
+      </div>
+      </div>
+      
+     
+     
+    <div class="grid-container">
+        <div class="video">
+          <a href="https://api.whatsapp.com/send?phone=551735222200&text=4%20Rodas:%20Confiabilidade%20e%20Qualidade,%20o%20Padr%C3%A3o%20que%20Voc%C3%AA%20Merece"target="_blank">
+            <video src="imagensp/propagandatelefone.mp4" muted loop autoplay></video>
+          </a>
+          
+
+            </div>
+         
+        
+            <div class="produto-frete">
+              <center>
+              <img src="imagensp/blocomotorhome.jpg" alt="Produto 1" width="60%" height="auto" class="zoomable"alt="produto-frete">
+            </center>
+              <h3>Bloco do Motor-CHANA/EFFA/TOWNER 1.0L 8V GAS APOS 2007</h3>
+              <p class="price">R$ 3.574,00 </p>
+              <p class="parcela">ou 6x de R$ 595,66</p>
+          
+              <form id="frete-form" onsubmit="event.preventDefault(); calcularFrete();">
+                <label for="quantity">Quantidade:</label>
+                <input type="number" name="quantity" id="quantity" min="1" value="1">
+          
+                <label for="zipcode">CEP:</label>
+                <input type="text" name="zipcode" id="zipcode" required>
+          
+                <button type="submit">Calcular Frete</button>
+                <p class="correios"> <img src="imagensp/correios.png.png" width="18%"></p>
+              </form>
+          
+              <div id="total" style="display: none;">
+                Valor Total: R$ <span id="total-value">0.00</span>
+              </div>
+              <br>
+          
+              <form id="checkout-form" action="gerar_comprovante.php" method="post" target="_blank">
+                <label for="payment">Forma de Pagamento:</label>
+                <select name="payment" id="payment" onchange="toggleForm()">
+                  <option value="pix"> Forma de pagamento</option>
+                  <option value="pix">PIX</option>
+                  <option value="boleto">Boleto Bancário</option>
+                  <option value="cartao">Cartão de Crédito</option>
+                  <option value="transferencia">Transferência Bancária</option>
+                 
+                </select>
+                <br>
+              
+                <div id="transferencia" style="display: none;">
+                  <label for="bank-name">Nome do Banco:</label>
+                  <input type="text" name="bank-name" id="bank-name" required>
+                  <br>
+              
+                  <label for="account-number">Número da Conta:</label>
+                  <input type="text" name="account-number" id="account-number" required>
+                  <br>
+              
+                  <label for="account-holder">Titular da Conta:</label>
+                  <input type="text" name="account-holder" id="account-holder" required>
+                  <br>
+                </div>
+              
+                <div id="pix" style="display: none;">
+                  <label for="pix-qr-code">QR Code:</label>
+                  <br>
+                  <img src="imagensp/qrcode.jpeg" alt="QR Code" width="50%"height="auto">
+                </div>
+              
+                <div id="cartao-credito" style="display: none;">
+                  <label for="card-number">Número do Cartão:</label>
+                  <input type="text" name="card-number" id="card-number" required>
+                  <br>
+              
+                  <label for="card-name">Nome do Titular:</label>
+                  <input type="text" name="card-name" id="card-name" required>
+                  <br>
+              
+                  <label for="card-expiry">Data de Expiração:</label>
+                  <input type="text" name="card-expiry" id="card-expiry" required>
+                  <br>
+              
+                  <label for="card-cvv">CVV:</label>
+                  <input type="text" name="card-cvv" id="card-cvv" required>
+                  <br>
+                </div>
+
+                <div id="boleto" style="display: none;">
+                  <label for="card-number">CPF</label>
+                  <input type="text" name="card-number" id="card-number" required>
+                  <br>
+              
+                  <label for="card-name">Nome do Titular:</label>
+                  <input type="text" name="card-name" id="card-name" required>
+                  <br>
+              
+                  
+                </div>
+
+              
+              
+                <br>
+                <a href="boleto.html" target="_blank"></a>
+                <button type="button" onclick="finalizarCompra()">Finalizar Compra</button>
+              </form>
+              
+              <script>
+                function toggleForm() {
+                  const paymentMethod = document.getElementById('payment').value;
+                  const transferenciaForm = document.getElementById('transferencia');
+                  const pixForm = document.getElementById('pix');
+                  const cartaoCreditoForm = document.getElementById('cartao-credito');
+              
+                  const boletoForm = document.getElementById('boleto');
+
+    if (paymentMethod === 'transferencia') {
+      transferenciaForm.style.display = 'block';
+      pixForm.style.display = 'none';
+      cartaoCreditoForm.style.display = 'none';
+      boletoForm.style.display = 'none';
+    } else if (paymentMethod === 'pix') {
+      transferenciaForm.style.display = 'none';
+      pixForm.style.display = 'block';
+      cartaoCreditoForm.style.display = 'none';
+      boletoForm.style.display = 'none';
+    } else if (paymentMethod === 'boleto') {
+      transferenciaForm.style.display = 'none';
+      pixForm.style.display = 'none';
+      cartaoCreditoForm.style.display = 'none';
+      boletoForm.style.display = 'block';
+    } else {
+      transferenciaForm.style.display = 'none';
+      pixForm.style.display = 'none';
+      cartaoCreditoForm.style.display = 'block';
+      boletoForm.style.display = 'none';
+    }
+  }
+  
+                function finalizarCompra() {
+                  const paymentMethod = document.getElementById('payment').value;
+              
+                  if (paymentMethod === 'transferencia') {
+                    const bankName = document.getElementById('bank-name').value;
+                    const accountNumber = document.getElementById('account-number').value;
+                    const accountHolder = document.getElementById('account-holder').value;
+              
+                    // Aqui você pode utilizar os dados da transferência bancária para o processamento
+                  } else if (paymentMethod === 'cartao') {
+                    const cardNumber = document.getElementById('card-number').value;
+                    const cardName = document.getElementById('card-name').value;
+                    const cardExpiry = document.getElementById('card-expiry').value;
+                    const cardCvv = document.getElementById('card-cvv').value;
+              
+                    // Aqui você pode utilizar os dados do cartão de crédito para o processamento
+                  } else if (paymentMethod === 'pix') {
+                    // Lógica específica para o método PIX
+                  }
+              
+                  calcularFrete();
+              
+                  
+                  // Exibir o valor total
+                  totalValueElement.textContent = totalValue.toFixed(2);
+                  totalContainer.style.display = 'block';
+              
+                  // Aqui você pode adicionar lógica adicional para enviar os dados ou gerar o comprovante de pagamento
+                }
+              
+                function calcularFrete() {
+                 
+                const quantity = document.getElementById('quantity').value;
+                const zipcode = document.getElementById('zipcode').value;
+                const totalValueElement = document.getElementById('total-value');
+                const totalContainer = document.getElementById('total');
+          
+                // Cálculo do valor total
+                const price =  3574.00 ;
+                const freight = 40; // Valor fixo do frete
+                const totalValue = (parseFloat(price) * parseInt(quantity)) + parseFloat(freight);
+          
+                // Exibir o valor total
+                totalValueElement.textContent = totalValue.toFixed(2);
+                totalContainer.style.display = 'block';
+              }
+
+              var primeiroClique = true;
+
+function finalizarCompra() {
+if (primeiroClique) {
+window.open("loginteste.html", "popup", "width=600,height=600");
+
+} else {
+window.open("boleto.html", "_blank");
+}
+
+primeiroClique = !primeiroClique;
+}
+                
+              </script>
+              
+              
+
+              
+          
+              
+            </script>
+
+              
+             
+  
+              <footer class="footer">
+                
+                  <img src="imagensp/Principaismarcas.gif.gif"width="1300px" height="150px">
+                
+                  <div class="waves">
+                  <div class="wave" id="wave1"></div>
+                  <div class="wave" id="wave2"></div>
+                  <div class="wave" id="wave3"></div>
+                  <div class="wave" id="wave4"></div>
+                </div>
+                <ul class="social-icon">
+                  <li class="social-icon__item"><a class="social-icon__link" href="https://www.facebook.com" target="_blank">
+                      <ion-icon name="logo-facebook"></ion-icon>
+                    </a></li>
+                  <li class="social-icon__item"><a class="social-icon__link" href="https://twitter.com" target="_blank">
+                      <ion-icon name="logo-twitter"></ion-icon>
+                    </a></li>
+                  <li class="social-icon__item"><a class="social-icon__link" href="https://www.linkedin.com/signup?_l=pt&trk=guest_homepage-basic_nav-header-join" target="_blank">
+                      <ion-icon name="logo-linkedin"></ion-icon>
+                    </a></li>
+                  <li class="social-icon__item"><a class="social-icon__link" href="https://www.instagram.com" target="_blank">
+                      <ion-icon name="logo-instagram"></ion-icon>
+                    </a></li>
+                </ul>
+                <center>
+                <ul class="menu-footer">
+                  <li class="menu__item"><a class="menu__link" href="Cidades.html" target="_blank">Cidades</a></li>
+                  <li class="menu__item"><a class="menu__link" href="marcas.html" target="_blank">Marcas</a></li>
+                  <li class="menu__item"><a class="menu__link" href="https://quatrorodas.abril.com.br/noticias/" target="_blank">Noticias</a></li>
+                  <li class="menu__item"><a class="menu__link" href="trabalheconosco.html" target="_blank">Trabalhe conosco</a></li>
+          
+                </ul>
+                <center>
+                  <p>&copy;2023 Paulo Sanches | Direitos Reservados</p>
+                </center>
+                
+              </footer>
+              <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+              <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+              
+              
+
+         
+              <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                const zoomableImages = document.querySelectorAll('.zoomable');
+              
+                zoomableImages.forEach((image) => {
+                let isZoomed = false;
+              
+                image.addEventListener('click', () => {
+                if (isZoomed) {
+                image.style.transform = 'scale(1)';
+                isZoomed = false;
+                } else {
+                image.style.transform = 'scale(1.3)'; 
+                isZoomed = true;
+                        }
+                      });
+                    });
+                  });
+              </script>
+
+          
+<script>
+  window.addEventListener('scroll', function() {
+    var footer = document.querySelector('footer');
+    var scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    var windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight || 0;
+    var documentHeight = Math.max(
+      document.body.scrollHeight || 0, 
+      document.documentElement.scrollHeight || 0,
+      document.body.offsetHeight || 0,
+      document.documentElement.offsetHeight || 0,
+      document.body.clientHeight || 0,
+      document.documentElement.clientHeight || 0
+    );
+
+    if (scrollPosition + windowHeight >= documentHeight) {
+      footer.style.display = 'block';
+    } else {
+      footer.style.display = 'none';
+    }
+  });
+</script>
+
+      </div>
+
+
+      <script>
+        function zoomIn() {
+          var mapImage = document.getElementById('mapImage');
+          mapImage.style.transform = 'scale(3)';
+        }
+      
+        function zoomOut() {
+          var mapImage = document.getElementById('mapImage');
+          mapImage.style.transform = 'scale(1)';
+        }
+      </script>
+      
+      <script>
+     function toggleZoom() {
+    var mapImage = document.getElementById('mapImage');
+  
+    if (mapImage.classList.contains('zoomed')) {
+    mapImage.classList.remove('zoomed');
+    } else {
+    mapImage.classList.add('zoomed');
+   }
+}
+
+      </script>
+
+<script>
+  function pesquisar() {
+      var input = document.getElementById('searchInput');
+      var searchTerm = input.value.toLowerCase();
+      var produtos = document.querySelectorAll('.product');
+
+      for (var i = 0; i < produtos.length; i++) {
+          var produto = produtos[i];
+          var titulo = produto.querySelector('h3').textContent.toLowerCase();
+
+          if (titulo.includes(searchTerm)) {
+              produto.style.display = 'block';
+          } else {
+              produto.style.display = 'none';
+            }
+  }
+}
+
+function handleKeyPress(event) {
+  if (event.keyCode === 13) {
+    pesquisar();
+  }
+}
+
+
+
+</script>
+</body>
+</html>
