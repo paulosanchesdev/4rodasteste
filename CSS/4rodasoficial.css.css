@@ -47,6 +47,11 @@ body {
   max-width: 100%;
   width: 70%;
 }
+@media screen and (min-width: 1920px) {
+  .menu {
+    width: 50%;
+  }
+}
 
 .social-icon,
 .menu {
@@ -176,6 +181,13 @@ color: #F2AC57;
   color: white;
   margin-bottom: 500px;
   margin-left: 10px;
+
+  @media screen and (min-width: 1920px) {
+    .products {
+      grid-template-columns: repeat(4, 1fr);
+      margin-left: 100px;
+    }
+  }
 }
 
 .product {
