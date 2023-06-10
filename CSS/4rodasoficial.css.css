@@ -285,6 +285,13 @@ color: #F2AC57;
   opacity: 0.7;
 }
 
+@media screen and (min-width: 15in) {
+  .nav1 {
+    display: flex;
+    justify-content: center;
+  }
+}
+
 footer {
   display: none;
   background-color: #000000;
