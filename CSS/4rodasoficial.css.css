@@ -49,7 +49,7 @@ body {
 }
 @media screen and (min-width: 1920px) {
   .menu {
-    width: 50%;
+    width: 100%;
   }
 }
 
@@ -181,6 +181,7 @@ color: #F2AC57;
   color: white;
   margin-bottom: 500px;
   margin-left: 10px;
+}
 
   @media screen and (min-width: 1920px) {
     .products {
@@ -188,7 +189,7 @@ color: #F2AC57;
       margin-left: 100px;
     }
   }
-}
+
 
 .product {
   background-color: #261B0D;
