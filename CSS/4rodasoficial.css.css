@@ -185,7 +185,7 @@ color: #F2AC57;
 
   @media screen and (min-width: 1920px) {
     .products {
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(8, 1fr);
       margin-left: 10px;
     }
   }
